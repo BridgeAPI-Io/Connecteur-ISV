@@ -1,0 +1,79 @@
+{#**
+ * Copyright Bridge
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE.md.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/AFL-3.0
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to tech@202-ecommerce.com so we can send you a copy immediately.
+ *
+ * @author    202 ecommerce <tech@202-ecommerce.com>
+ * @copyright Bridge
+ * @license   https://opensource.org/licenses/AFL-3.0  Academic Free License (AFL 3.0) 
+ *#}
+{% set formAction = url('bridge_update_process_logger_form') %}
+    {{ form_start(form, {'action': formAction, 'attr': {'class': 'form', 'id': 'processlogger_form'}}) }}
+<div class="row justify-content-center">
+  {% block processlogger_form %}
+    <div class="col-xl-12">
+      <div class="card">
+        <h3 class="card-header">
+          <i class="material-icons">settings</i> {{ 'Process Logger Settings'|trans({}, 'Module.__Module.Admin') }}
+        </h3>
+        <div class="card-block row">
+          <div class="card-text">
+            <div class="form-group row">
+              {{ ps.label_with_help(
+                ('Activate quiet mode'|trans({}, 'Module.__Module.Admin')),
+                ('If quiet mode is activated, only success and error logs are saved. Logs with a level info are not saved.'|trans({}, 'Module.__Module.Admin')))
+              }}
+
+              <div class="col-sm">
+                {{ form_errors(form.processlogger.BRIDGE_PROCESS_LOGGER_QUIET_MODE) }}
+                {{ form_widget(form.processlogger.BRIDGE_PROCESS_LOGGER_QUIET_MODE) }}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{ ps.label_with_help(
+                ('Disable auto erasing'|trans({}, 'Module.__Module.Admin')),
+                ('If disabled, logs will be automatically erased after the delay.'|trans({}, 'Module.__Module.Admin')))
+              }}
+
+              <div class="col-sm">
+                {{ form_errors(form.processlogger.BRIDGE_EXTLOGS_ERASING_DISABLED) }}
+                {{ form_widget(form.processlogger.BRIDGE_EXTLOGS_ERASING_DISABLED) }}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{ ps.label_with_help(
+                ('Auto erasing delay (in days)'|trans({}, 'Module.__Module.Admin')),
+                ('Choose the number of days you want to keep logs in database.'|trans({}, 'Module.__Module.Admin')))
+              }}
+
+              <div class="col-sm">
+                {{ form_errors(form.processlogger.BRIDGE_EXTLOGS_ERASING_DAYSMAX) }}
+                {{ form_widget(form.processlogger.BRIDGE_EXTLOGS_ERASING_DAYSMAX) }}
+              </div>
+            </div>
+
+            {% block processlogger_form_rest %}
+              {{ form_rest(form) }}
+            {% endblock %}
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-primary">{{ 'Save'|trans({}, 'Admin.Actions') }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</div>
+{{ form_end(form) }}

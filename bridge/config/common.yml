@@ -1,0 +1,10 @@
+imports:
+  - { resource: partials/api.yml }
+  - { resource: partials/service.yml }
+
+services:
+  bridge:
+    class: 'Bridge'
+    factory: ['Module', 'getInstanceByName']
+    arguments:
+      - 'bridge'

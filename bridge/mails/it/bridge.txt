@@ -1,0 +1,21 @@
+[{shop_url}] 
+ 
+Buongiorno {firstname} {lastname},
+ 
+Grazie per aver effettuato i tuoi acquisti su {shop_name}! 
+ 
+Il tuo ordine con riferimento {order_name} è stato registrato e sarà inviato una volta ricevuto il pagamento.
+ 
+Modalità di pagamento: Bonifico istantaneo 
+ 
+Hai scelto di pagare il tuo ordine tramite bonifico bancario utilizzando Bridge. 
+Il tuo bonifico è in attesa di essere ricevuto. 
+ 
+Puoi accedere allo stato del tuo ordine in qualsiasi momento e
+scaricare la fattura in "Storico degli ordini"
+[{history_url}] della scheda "Il mio
+account" [{my_account_url}] sul nostro
+sito. 
+ 
+Se hai un account ospite, puoi seguire il tuo ordine attraverso la sezione "Monitoraggio invitato" 
+[{guest_tracking_url}] sul nostro negozio.

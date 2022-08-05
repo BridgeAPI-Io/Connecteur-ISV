@@ -1,0 +1,22 @@
+[{shop_url}] 
+ 
+Hallo {firstname} {lastname},
+ 
+Vielen Dank, dass Sie auf {shop_name} eingekauft haben!
+  
+Ihre Bestellung mit der Referenz {order_name} wurde berücksichtigt und wird sofort nach Eingang Ihrer Zahlung versendet.
+ 
+Zahlungsmethode: Sofortüberweisung
+  
+Sie haben sich dafür entschieden, Ihre Bestellung per Banküberweisung unter Verwendung von Bridge zu bezahlen. 
+Der Eingang Ihrer Überweisung wird erwartet. 
+ 
+Sie können jederzeit auf die Verfolgung Ihrer Bestellung zugreifen und
+Ihre Rechnung unter "Bestellhistorie"
+[{history_url}] in der Rubrik "Mein
+Konto" [{my_account_url}] auf unserer
+Website herunterladen. 
+ 
+Wenn Sie ein Gastkonto haben, können Sie Ihre Bestellung
+über den Abschnitt "Verfolgung Gast" [{guest_tracking_url}] auf unserem
+Shop verfolgen.

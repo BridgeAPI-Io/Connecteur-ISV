@@ -1,0 +1,23 @@
+services:
+  BridgeAddon\API\Client\Client:
+    class: 'BridgeAddon\API\Client\Client'
+    arguments:
+      - '@BridgeAddon\API\ApiConfig'
+      - '@BridgeClasslib\Extensions\ProcessLogger\ProcessLoggerHandler'
+      - '@BridgeAddon\API\Factory\ResponseFactory'
+      - '@BridgeAddon\API\Factory\RequestValidatorFactory'
+
+  BridgeAddon\API\ApiConfig:
+    class: '\BridgeAddon\API\ApiConfig'
+
+  BridgeClasslib\Extensions\ProcessLogger\ProcessLoggerHandler:
+    class: 'BridgeClasslib\Extensions\ProcessLogger\ProcessLoggerHandler'
+
+  BridgeAddon\API\Factory\ResponseFactory:
+    class: 'BridgeAddon\API\Factory\ResponseFactory'
+
+  BridgeAddon\API\Factory\RequestValidatorFactory:
+    class: 'BridgeAddon\API\Factory\RequestValidatorFactory'
+
+  BridgeAddon\API\Factory\RequestFactory:
+    class: 'BridgeAddon\API\Factory\RequestFactory'

@@ -1,0 +1,26 @@
+services:
+  BridgeAddon\Service\BankService:
+    class: 'BridgeAddon\Service\BankService'
+    arguments:
+      - '@BridgeAddon\API\Client\Client'
+      - '@BridgeAddon\API\Factory\RequestFactory'
+
+  BridgeAddon\Repository\PaymentRepository:
+    class: BridgeAddon\Repository\PaymentRepository
+
+  BridgeAddon\Service\PaymentService:
+    class: 'BridgeAddon\Service\PaymentService'
+    arguments:
+      - '@BridgeAddon\API\Client\Client'
+      - '@BridgeAddon\API\Factory\RequestFactory'
+      - '@BridgeAddon\Repository\PaymentRepository'
+      - '@BridgeClasslib\Extensions\ProcessLogger\ProcessLoggerHandler'
+      - '@Bridge'
+
+  BridgeAddon\Service\ConfigService:
+    class: 'BridgeAddon\Service\ConfigService'
+    arguments:
+      - '@BridgeAddon\API\Client\Client'
+      - '@BridgeAddon\API\Factory\RequestFactory'
+      - '@BridgeClasslib\Extensions\ProcessLogger\ProcessLoggerHandler'
+      - '@Bridge'

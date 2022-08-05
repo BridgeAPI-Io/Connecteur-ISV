@@ -1,0 +1,21 @@
+[{shop_url}] 
+ 
+Olá {firstname} {lastname},
+ 
+Obrigado por comprar com a/o {shop_name}! 
+ 
+A sua encomenda com a referência {order_name} foi submetida com
+sucesso e será enviada assim que recebermos o seu pagamento.
+ 
+Método de pagamento: Transferência bancária imediata
+  
+Escolheu pagar a sua encomenda por transferência bancária com a Bridge.
+A sua transferência aguarda receção.
+ 
+Pode rever a sua encomenda e descarregar a a sua fatura 
+a partir da secção "Histórico de encomendas" [{history_url}]
+na sua conta de cliente ao clicar em "Minha conta" [{my_account_url}] no nosso site. 
+ 
+Caso tenha uma conta de convidado,
+pode seguir a sua encomenda na secção
+"Seguimento para convidados" [{guest_tracking_url}] na nossa loja.
