@@ -58,32 +58,23 @@ class BridgeApi
 	}
 
 	/**
-	 * Take existing instance of BridgeGateway class
+	 * Instantiate BridgeGateway to be re-used through the plugin
 	 */
-	public function findBridgeGateway(): void
+	public function loadBridgeGateway(): void
 	{
-		// Reinstantiation messes things up. And it does not support singleton approach because of
-		// how WC access payment gateway classes. So we find existing if enabled and use it
-		if (function_exists('WC') && !empty(WC()->payment_gateways->payment_gateways)) {
-			foreach (WC()->payment_gateways->payment_gateways as $gateway) {
-				if (is_a($gateway, 'BridgeApi\BridgeGateway')) {
-					$this->bridgeGateway = $gateway;
-					break;
-				}
-			}
-		}
+		$this->bridgeGateway = new BridgeGateway();
 	}
 
 	/**
 	 * Expose payment gateway class to WC
 	 *
-	 * @param array<string> $methods
+	 * @param array<mixed> $methods
 	 *
-	 * @return array<string> $methods
+	 * @return array<mixed> $methods
 	 */
 	public function addPaymentMethod(array $methods): array
 	{
-		$methods[] = 'BridgeApi\BridgeGateway';
+		$methods[] = $this->bridgeGateway;
 		return $methods;
 	}
 
@@ -307,7 +298,7 @@ class BridgeApi
 		add_action('wp_enqueue_scripts', [$this, 'checkoutScripts']);
 
 		// Delay this action to the last of them, we need to make sure loadTranslations() is done
-		add_action('plugins_loaded', [$this, 'findBridgeGateway'], 50);
+		add_action('woocommerce_init', [$this, 'loadBridgeGateway'], 50);
 
 		add_filter('woocommerce_thankyou_order_id', [$this, 'processPayment']);
 		add_filter('query_vars', [$this, 'addQueryVar']);

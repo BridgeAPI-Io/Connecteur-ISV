@@ -429,7 +429,7 @@ class Utils
 		global $bridgeapi;
 
 		$bridgeStatus = get_query_var('bridge-status');
-		$headers = getallheaders();
+		$headers = array_change_key_case(getallheaders(), CASE_LOWER);
 
 		/**
 		 * CHECKS
@@ -444,7 +444,7 @@ class Utils
 		return (
 			$_SERVER['REQUEST_METHOD'] === 'POST' &&
 			$bridgeStatus === 'transaction-updated' &&
-			!empty($headers['Bridgeapi-Signature']) &&
+			!empty($headers['bridgeapi-signature']) &&
 			!empty($bridgeapi->bridgeGateway) &&
 			!empty(($isSandbox ? $bridgeapi->bridgeGateway->test_webhook_secret : $bridgeapi->bridgeGateway->webhook_secret))
 		);
@@ -457,11 +457,11 @@ class Utils
 	{
 		global $bridgeapi;
 
-		$headers = getallheaders();
+		$headers = array_change_key_case(getallheaders(), CASE_LOWER);
 		$result = false;
 
-		if (isset($headers['Bridgeapi-Signature'])) {
-			$signatures = explode(',', $headers['Bridgeapi-Signature']);
+		if (isset($headers['bridgeapi-signature'])) {
+			$signatures = explode(',', $headers['bridgeapi-signature']);
 			$hash = strtoupper(
 				hash_hmac('sha256', $requestBody, ($isSandbox ? $bridgeapi->bridgeGateway->test_webhook_secret : $bridgeapi->bridgeGateway->webhook_secret), false)
 			);
