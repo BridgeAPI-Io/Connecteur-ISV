@@ -4,7 +4,7 @@ Tags: payment, wire transfer, virement bancaire, paiement
 Requires at least: 5.0
 Tested up to: 5.9.3
 Requires PHP: 7.2
-Stable tag: 1.0.7
+Stable tag: 1.0.9
 License: GNU General Public License
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -56,6 +56,8 @@ Vous pouvez consulter notre guide d'installation ici : https://bridgeapi.zendesk
 5. Le client est validée
 
 == Changelog ==
+= 1.0.9 =
+Corrige l'affichage des images sur le module de paiement du panier.
 = 1.0.8 =
 Optimisations du module Bridge - Payer par Virement Immédiat
 = 1.0.7 =

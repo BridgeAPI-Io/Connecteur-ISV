@@ -4,7 +4,7 @@
  * Author:		Bridge
  * Author URI:		https://bridgeapi.io/
  * Description:		Enable your customer to shop in 1 click: simple, 100% secured and without amount limit
- * Version:		1.0.8
+ * Version:		1.0.9
  * Text Domain:		bridgeapi-io
  * Requires PHP:	7.4
  * Requires at least:	5.1
